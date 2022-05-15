@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Yolcu {
     private String tc;
-    private String name;
-    private String surname;
+    private String isimSoyisim;
 }

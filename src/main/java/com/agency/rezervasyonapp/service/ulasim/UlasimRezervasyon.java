@@ -4,4 +4,7 @@ import com.agency.rezervasyonapp.service.Rezervasyon;
 
 public interface UlasimRezervasyon extends Rezervasyon {
 
+    String getNereden();
+    String getNereye();
+    String getFiyat();
 }

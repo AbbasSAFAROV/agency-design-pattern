@@ -1,5 +1,6 @@
 package com.agency.rezervasyonapp;
 
+import com.agency.rezervasyonapp.entity.Yolcu;
 import com.agency.rezervasyonapp.service.*;
 import com.agency.rezervasyonapp.service.konaklama.KonaklamaFactory;
 import com.agency.rezervasyonapp.service.konaklama.KonaklamaRezervasyon;
@@ -33,15 +34,37 @@ public class RezervasyonAppApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        System.out.println("---------------------- WELCOME TO THE HFTTF AGENCY ---------------------------");
+
+        System.out.print("Isim Soyisim: ");
+        String isimSoyisim = scanner.nextLine();
+
+        System.out.print("Kimlik No: ");
+        String tcKimlik = scanner.nextLine();
+
+        Yolcu yolcu = new Yolcu(tcKimlik,isimSoyisim);
+
         System.out.println("Lütfen ulasim turu seciniz: "+ Arrays.toString(UlasimTipi.values()));
         UlasimTipi ulasimTipi = UlasimTipi.valueOf(scanner.nextLine());
 
         UlasimRezervasyon ulasimRezervasyon = UlasimFactory.getInstance(ulasimTipi);
 
+        System.out.print("Nereden: ");
+        String nereden = scanner.nextLine();
+        System.out.print("Nereye: ");
+        String nereye = scanner.nextLine();
+        System.out.print("Fiyat: ");
+        String fiyat = scanner.nextLine();
+
+
+
         System.out.println("Lütfen Konaklama turu seciniz: "+ Arrays.toString(KonaklamaTipi.values()));
         KonaklamaTipi konaklamaTipi = KonaklamaTipi.valueOf(scanner.nextLine());
 
         KonaklamaRezervasyon konaklamaRezervasyon = KonaklamaFactory.getInstance(konaklamaTipi);
+
+        System.out.print("Konaklama Lokasyon: ");
+        String lokasyon = scanner.nextLine();
 
         System.out.println("Lütfen Yazdirma turu seciniz: "+ Arrays.toString(YazdirmaTipi.values()));
         YazdirmaTipi yazdirmaTipi = YazdirmaTipi.valueOf(scanner.nextLine());
@@ -51,8 +74,8 @@ public class RezervasyonAppApplication implements CommandLineRunner {
 
         Seyahat seyahat = new Seyahat(ulasimRezervasyon,konaklamaRezervasyon);
 
-        seyahat.seyahatOlustur();
-        yazdir.yazdir();
+        //seyahat.seyahatOlustur();
+        yazdir.yazdir(seyahat);
 
 
     }
