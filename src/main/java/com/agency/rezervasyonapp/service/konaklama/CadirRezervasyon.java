@@ -1,19 +1,17 @@
 package com.agency.rezervasyonapp.service.konaklama;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @ToString @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CadirRezervasyon implements KonaklamaRezervasyon {
 
     private String lokasyon;
-    private String fiyat;
+    private Double fiyat;
 
     @Override
     public void rezervasyonOlustur() {
@@ -26,7 +24,7 @@ public class CadirRezervasyon implements KonaklamaRezervasyon {
     }
 
     @Override
-    public String getFiyat() {
+    public Double getFiyat() {
         return fiyat;
     }
 }

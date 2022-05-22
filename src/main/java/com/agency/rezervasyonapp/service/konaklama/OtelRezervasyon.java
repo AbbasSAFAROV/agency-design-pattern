@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class OtelRezervasyon implements KonaklamaRezervasyon {
 
     private String lokasyon;
-    private String fiyat;
+    private Double fiyat;
 
     @Override
     public void rezervasyonOlustur() {
@@ -28,7 +28,7 @@ public class OtelRezervasyon implements KonaklamaRezervasyon {
     }
 
     @Override
-    public String getFiyat() {
+    public Double getFiyat() {
         return fiyat;
     }
 }

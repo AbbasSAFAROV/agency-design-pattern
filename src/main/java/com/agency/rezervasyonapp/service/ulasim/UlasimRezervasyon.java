@@ -6,5 +6,5 @@ public interface UlasimRezervasyon extends Rezervasyon {
 
     String getNereden();
     String getNereye();
-    String getFiyat();
+    Double getFiyat();
 }

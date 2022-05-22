@@ -10,7 +10,7 @@ public class OtobusRezervasyon implements UlasimRezervasyon {
 
     private String nereden;
     private String nereye;
-    private String fiyat;
+    private Double fiyat;
 
     @Override
     public void rezervasyonOlustur() {
@@ -28,7 +28,7 @@ public class OtobusRezervasyon implements UlasimRezervasyon {
     }
 
     @Override
-    public String getFiyat() {
+    public Double getFiyat() {
         return fiyat;
     }
 }

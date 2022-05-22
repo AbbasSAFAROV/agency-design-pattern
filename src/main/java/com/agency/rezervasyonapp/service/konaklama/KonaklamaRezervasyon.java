@@ -4,5 +4,5 @@ import com.agency.rezervasyonapp.service.Rezervasyon;
 
 public interface KonaklamaRezervasyon extends Rezervasyon {
     String getLokasyon();
-    String getFiyat();
+    Double getFiyat();
 }

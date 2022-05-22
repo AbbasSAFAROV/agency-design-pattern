@@ -73,6 +73,13 @@ public class RezervasyonAppApplication implements CommandLineRunner {
 
 
         Seyahat seyahat = new Seyahat(ulasimRezervasyon,konaklamaRezervasyon);
+        SeyahatDetay seyahatDetay = SeyahatDetay.builder()
+                .yolcu(yolcu)
+                .nereden(nereden)
+                .nereye(nereye)
+                .konaklamaTipi(konaklamaTipi.toString())
+                .ulasimTipi(ulasimTipi.toString())
+                .build();
 
         //seyahat.seyahatOlustur();
         yazdir.yazdir(seyahat);
